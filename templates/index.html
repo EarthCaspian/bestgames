@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caspian's Curse</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&family=Unbounded&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    {% include "includes/_navbar.html" %}
+    
+      {% if messages %}
+
+      {% for mesaj in messages %}
+      <div class="message-box">
+        <div class="alert alert-{{mesaj.tags}} text-center">
+          {{mesaj}}
+        </div>
+      </div>
+      
+      {% endfor %}
+      
+      {% else %}
+      {% endif %}
+    
+    
+
+    
+    
+    {% block content %}
+    <div class="intro">
+
+        <h2>Welcome to Caspian's Curse</h2>
+        <p>
+          Welcome to Caspian's Curse, the ultimate online haven for gaming enthusiasts! Our website is a treasure trove of gaming knowledge,
+          where users can discover, share, and celebrate their favorite games of all time. With an interactive and user-friendly interface, 
+          Caspian's Curse invites gamers from all walks of life to upload their favorite games, upvote the titles they love, and engage in 
+          passionate discussions about their gaming experiences.
+        </p>
+
+    </div>
+    <h4 class="text-light text-center">Best Games Throughout History</h4>
+    <div class="container mt-0">
+      <div class="row">
+        {% if oyunlar|length > 0 %}
+          {% for oyun in oyunlar %}
+          <div class="col-3 mb-4">
+            <div class="card me-4 mt-4 pt-2 text-bg-dark h-100 position-relative" style="width: 18rem;">
+              <img src="{{oyun.oyunResim.url}}" class="card-img-top" style="object-fit: cover; height: 200px;" alt="{{oyun.OyunIsim}}">
+              <div class="card-body">
+                <h5 class="card-title">{{oyun.oyunIsim}}</h5>
+                <p class="card-text">{{oyun.oyunAciklama|safe|slice:"300"}}</p>
+                <a href="#" class="position-absolute btn btn-primary mx-auto" style="bottom: 10px;">Go to Game</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+        <h2>No game found matching your search.</h2>
+        {% endif %}
+      </div>
+    </div>
+    {% endblock content %}
+    
+
+    
+
+    <!-- <div class="outro">
+        <p class="text-light">
+            Listelenen oyunlar ve incelemeleri yalnızca eğlence amaçlı olup, kişisel görüşlerimi belirtmektedir. 
+        </p>
+    </div> -->
+    <footer>
+            <ul class="left">
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Register</a></li>
+                <li><a href="/">Games</a></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <ul class="right">
+                <li><a href="#">Caspian's Curse</a></li>
+            </ul>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
+</html>
