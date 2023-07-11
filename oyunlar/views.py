@@ -21,7 +21,7 @@ def index(request):
 def games(request, gameId):
     mygame = Game.objects.get(id = gameId)
     context = {
-        'game':mygame
+        'gameItem':mygame
     }
     return render(request, 'detail.html', context)
 

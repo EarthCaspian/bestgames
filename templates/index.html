@@ -62,7 +62,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{oyun.oyunIsim}}</h5>
                 <p class="card-text">{{oyun.oyunAciklama|safe|slice:"300"}}</p>
-                <a href="#" class="position-absolute btn btn-primary mx-auto" style="bottom: 10px;">Go to Game</a>
+                <a href="{% url 'details' oyun.id %}" class="position-absolute btn btn-primary mx-auto" style="bottom: 10px;">Go to Game</a>
               </div>
             </div>
           </div>
