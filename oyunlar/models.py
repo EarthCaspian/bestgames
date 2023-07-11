@@ -26,7 +26,7 @@ class Game(models.Model):
     oyunPlatformu = models.ManyToManyField(Platform, blank=True)
     oyunCikisTarihi = models.OneToOneField(ReleaseDate, on_delete=models.SET_NULL, null=True)
     oyunIsim = models.CharField(max_length=100)
-    oyunAciklama = RichTextField(max_length=1000)
+    oyunAciklama = RichTextField(max_length=10000)
     oyunResim = models.ImageField(upload_to='oyunlar/')
 
     def __str__(self):
