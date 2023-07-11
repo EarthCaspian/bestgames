@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # apps
     'oyunlar',
+    'kullanici',
 
     # 3rd party
     'ckeditor'
