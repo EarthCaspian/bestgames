@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from django.db.models import Q
+from .forms import *
 # Create your views here.
 def index(request):
     oyunlar = Game.objects.all()
@@ -25,3 +26,14 @@ def games(request, gameId):
     }
     return render(request, 'detail.html', context)
 
+def addGames(request):
+    form = GameForm()
+    if request.method == 'POST':
+        form = GameForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    context = {
+        'form':form
+    }
+    return render(request, 'add.html', context)

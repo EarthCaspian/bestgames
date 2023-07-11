@@ -12,7 +12,7 @@
                   {{request.user}}
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Add Game</a></li>
+                  <li><a class="dropdown-item" href="{% url 'addgames' %}">Add Game</a></li>
                   <li><a class="dropdown-item" href="#">View Your Games</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
