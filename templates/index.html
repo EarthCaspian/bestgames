@@ -78,7 +78,11 @@
     <footer>
             <ul class="left">
                 <li><a href="/">Home</a></li>
-                <li><a href="/">Register</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="/">{{request.user}}</a></li>
+                {% else %}
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}               
                 <li><a href="/">Games</a></li>
                 <li></li>
                 <li></li>
