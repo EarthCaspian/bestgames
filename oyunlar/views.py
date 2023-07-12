@@ -9,7 +9,9 @@ def index(request):
     if request.GET.get('search'):
         search = request.GET.get('search')
         oyunlar = Game.objects.filter(
-            Q(oyunIsim__icontains = search)
+            Q(oyunIsim__icontains = search) |
+            Q(oyunPlatformu__platform__icontains = search) |
+            Q(oyunTuru__tur__icontains = search)
         )
     context = {
         'oyunlar':oyunlar,
