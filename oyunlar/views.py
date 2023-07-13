@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.db.models import Q
 from .forms import *
+from django.http import JsonResponse
 # Create your views here.
 def index(request):
     oyunlar = Game.objects.all()
@@ -13,9 +14,11 @@ def index(request):
             Q(oyunPlatformu__platform__icontains = search) |
             Q(oyunTuru__tur__icontains = search)
         )
+    game_count = Game.objects.count()
     context = {
         'oyunlar':oyunlar,
-        'search':search
+        'search':search,
+        'game_count':game_count
     }
     return render(request, 'index.html', context)
 
@@ -37,3 +40,7 @@ def addGames(request):
         'form':form
     }
     return render(request, 'add.html', context)
+
+def game_count(request):
+    count = Game.objects.count()
+    return JsonResponse({'count':count})
