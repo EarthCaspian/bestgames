@@ -43,4 +43,8 @@ def addGames(request):
 
 def game_count(request):
     count = Game.objects.count()
-    return JsonResponse({'count':count})
+    response = JsonResponse({'count':count})
+
+    print(response)
+
+    return response

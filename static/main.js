@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 function updateGameCount() {
     $.ajax({
-        url: '/game/count/',  // Replace with the appropriate URL to fetch the game count
+        url: '/game/count/',
         method: 'GET',
         success: function(response) {
             $('#count-placeholder').text(response.count);
