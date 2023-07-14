@@ -28,6 +28,7 @@ urlpatterns = [
     path('register/', userRegister, name='register'),
     path('login/', userLogin, name="login"),
     path('logout/', userLogout, name='logout'),
-    path('game/count', game_count, name='game_count')
+    path('game/count', game_count, name='game_count'),
+    path('game/count/user', user_game_count, name='user_game_count')
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

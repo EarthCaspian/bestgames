@@ -3,6 +3,7 @@ from .models import *
 from django.db.models import Q
 from .forms import *
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def index(request):
     oyunlar = Game.objects.all()
@@ -48,3 +49,9 @@ def game_count(request):
     print(response)
 
     return response
+
+@login_required
+def user_game_count(request):
+    user = request.user
+    count = Game.objects.filter(user=user).count()
+    return JsonResponse({'count':count})

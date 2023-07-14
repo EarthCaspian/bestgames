@@ -18,7 +18,9 @@
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
               </li>
-            
+              <li class="nav-item">
+                <a class="nav-link" href="/">Your Game Count: <span id="user-count-placeholder"></span></a>
+              </li>
             {% else %}
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
@@ -27,9 +29,7 @@
                 <a class="nav-link" href="{% url 'register' %}">Register</a>
               </li>
             {% endif %}
-              <li class="nav-item">
-                <a class="nav-link" href="/">Total Number of Games Added : {{game_count}}</a>
-              </li>
+              
               
             </ul>
             <form class="d-flex" action="/" method="GET" role="search">
