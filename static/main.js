@@ -3,10 +3,13 @@ $(document).ready(function() {
     console.log('update running');
 });
 
+var url = "game/count";
+
 function updateGameCount() {
     $.ajax({
-        url: '/game/count/',
+        url: url,
         method: 'GET',
+        dataType: "json",
         success: function(response) {
             $('#count-placeholder').text(response.count);
         },
