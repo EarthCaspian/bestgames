@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Genre(models.Model):
@@ -22,6 +23,7 @@ class ReleaseDate(models.Model):
     
 
 class Game(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     oyunTuru = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
     oyunPlatformu = models.ManyToManyField(Platform, blank=True)
     oyunCikisTarihi = models.OneToOneField(ReleaseDate, on_delete=models.SET_NULL, null=True)
