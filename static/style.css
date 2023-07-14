@@ -1,10 +1,10 @@
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
 body{
     margin: 0;
     padding: 0; 
-    background-image: linear-gradient(to bottom ,rgba(0, 0, 0, 0.863), #224ca091), url(foto/bg.jpg);
+    background-image: linear-gradient(to bottom ,rgba(0, 0, 0, 0.863), #224ca091), url(foto/gamingbg.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -30,6 +30,38 @@ body{
     justify-content: center;
 }
 
+/* Hero image */
+.hero-image {
+    background-image: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url(foto/retrobg.jpg);
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.hero-text h2 {
+    font-size: 5vw; 
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-family: 'Sigmar One', cursive;
+}
+
+.navbar-text {
+    font-family: 'Sigmar One', cursive;
+}
+
+
 /* ************ Main ****************** */
 
 .intro {
@@ -43,7 +75,7 @@ nav, h2 ,h4{
     font-family: 'Sigmar One', cursive;
 }
 nav {
-    background-image: linear-gradient(90deg, #4b6bb7 0%, #182848 100%);
+    background-image: linear-gradient(90deg, #212529 0%, #182848 100%);
     position: fixed;
     width: 97%;
     display: flex;
@@ -65,7 +97,7 @@ nav {
 /* *********Footer************ */
 
 footer {
-    background-image: linear-gradient(90deg, #4b6bb7 0%, #182848 100%);
+    background-image: linear-gradient(90deg, #212529 0%, #182848 100%);
     width: 97%;
     height: 150px;
     display: flex;

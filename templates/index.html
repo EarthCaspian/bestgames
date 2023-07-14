@@ -40,8 +40,8 @@
     
     
     {% block content %}
-    <div class="intro">
-
+    <div class="hero-image">
+      <div class="hero-text">
         <h2>Welcome to Caspian's Curse</h2>
         <p>
           Welcome to Caspian's Curse, the ultimate online haven for gaming enthusiasts! Our website is a treasure trove of gaming knowledge,
@@ -53,9 +53,14 @@
         <span id="game-count" class="navbar-text">
           Total Games: <span id="count-placeholder"></span>
         </span>
-
     </div>
-    <h4 class="text-light text-center">List of Games Considered Best Throughout History</h4>
+    </div>
+    <!-- <div class="intro">
+
+        
+
+    </div> -->
+    <h4 class="text-light text-center mt-5">List of Games Considered Best Throughout History</h4>
     <div class="container mt-0">
       <div class="row">
         {% if oyunlar|length > 0 %}
@@ -72,13 +77,12 @@
           </div>
           {% endfor %}
         {% else %}
-        <h2>No game found matching your search.</h2>
+        <h2 class="text-center">No game found matching your search.</h2>
         {% endif %}
       </div>
     </div>
     {% endblock content %}
     
-
     <footer>
             <ul class="left">
                 <li><a href="/">Home</a></li>
