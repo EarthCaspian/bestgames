@@ -2,6 +2,12 @@ $(document).ready(function() {
     updateGameCount();
     updateUserGameCount();
     console.log('update running');
+
+    // slick init
+    $('.your-class').slick({
+        accessibility: true,
+        adaptiveHeight: true
+      });
 });
 
 var url = "game/count";

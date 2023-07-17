@@ -11,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- Main CSS -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +83,24 @@
         {% endif %}
       </div>
     </div>
+
+    <div class="container-fluid mt-5">
+      <div class="row p-4 bg-dark">
+
+          <div class="col-4">
+            <div class="your-class">
+              <div><img src="/static/foto/sifugraphics.png" alt=""></div>
+              <div><img src="/static/foto/graves.png" alt=""></div>
+              <div><img src="/static/foto/ow2graphics.png" alt=""></div>
+            </div>
+          </div>
+
+          <div class="col-8">
+              <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+      </div>
+  </div>
+    
     {% endblock content %}
     
     <footer>
@@ -105,6 +125,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <!-- Slick JS -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <!-- Main JS -->
         <script src="/static/main.js"></script>
 </body>
