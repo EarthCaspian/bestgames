@@ -30,7 +30,8 @@ body{
     justify-content: center;
 }
 
-/* Hero image */
+/* **********Hero Image***************** */
+
 .hero-image {
     background-image: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)), url(foto/retrobg.jpg);
     height: 1000px;
@@ -62,9 +63,22 @@ body{
     font-size: large;
 }
 
+.game-wall {
+    font-family: 'Sigmar One', cursive;
+    font-size: small;
+}
+
+/* **********Fun-Fact***************** */
+
+.fun-fact {
+    font-family: 'Sigmar One', cursive;
+}
+
+
 .your-class img {
     width: 100%;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 /* ************ Main ****************** */
