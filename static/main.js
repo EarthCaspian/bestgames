@@ -6,8 +6,8 @@ $(document).ready(function() {
     // slick init
     $('.your-class').slick({
         accessibility: true,
-        adaptiveHeight: true
-      });
+        centerMode: true,
+    });
 });
 
 var url = "game/count";
