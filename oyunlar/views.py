@@ -16,6 +16,11 @@ def index(request):
             Q(oyunTuru__tur__icontains = search)
         )
     game_count = Game.objects.count()
+
+    for oyun in oyunlar:
+        if len(oyun.oyunAciklama) > 300:
+            oyun.oyunAciklama = oyun.oyunAciklama[:300] + '...'
+
     context = {
         'oyunlar':oyunlar,
         'search':search,
