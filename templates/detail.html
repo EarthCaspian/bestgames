@@ -15,4 +15,19 @@
             </div>
         </div>
     </div>
+    <br><br>
+    <div class="container mt-3 d-flex align-items-center justify-content-center">
+    <h2>Comments</h2>
+    {% for comment in comments %}
+        <h2>Comments</h2>
+        {% for comment in comments %}
+            <p>
+                <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
+            </p>
+            <a href="{% url 'create_comment' comment.commenter.id %}">Add a comment</a>
+        {% endfor %}
+    {% endfor %}
+
+    
+    </div>
 {% endblock content %}

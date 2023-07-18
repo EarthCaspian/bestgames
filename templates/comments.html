@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    {% if comments %}
+    <h1>Game Comments</h1>
+
+    {% for comment in comments %}
+        <p>
+            <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
+        </p>
+    {% endfor %}
+{% else %}
+    <p>No comments yet.</p>
+{% endblock %}

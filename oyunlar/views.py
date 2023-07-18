@@ -55,6 +55,30 @@ def game_count(request):
 
     return response
 
+def game_comments(request, gameId):
+    game = Game.objects.get(id=gameId)
+    comments = Comment.objects.filter(commentedGame=game)
+    context = {
+        'game': game,
+        'comments': comments,
+    }
+    return render(request, 'comments.html', context)
+
+def create_comment(request, gameId):
+    if request.method == 'POST':
+        content = request.POST['content']
+        user = request.user
+        game = Game.objects.get(id=gameId)
+
+        comment = Comment(content=content, user=user, game=game)
+        comment.save()
+
+        return redirect('details', gameId=gameId)
+    context = {
+        'gameId': gameId,
+    }
+    return render(request, 'create_comment.html',context)
+
 @login_required
 def user_game_count(request):
     user = request.user
