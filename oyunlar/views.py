@@ -67,10 +67,10 @@ def game_comments(request, gameId):
 def create_comment(request, gameId):
     if request.method == 'POST':
         content = request.POST['content']
-        user = request.user
+        commenter = request.user
         game = Game.objects.get(id=gameId)
 
-        comment = Comment(content=content, user=user, game=game)
+        comment = Comment(content=content, commenter=commenter, commentedGame=game)
         comment.save()
 
         return redirect('details', gameId=gameId)
