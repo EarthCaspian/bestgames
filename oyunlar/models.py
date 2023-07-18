@@ -35,7 +35,7 @@ class Game(models.Model):
         return self.oyunIsim
     
 class Comment(models.Model):
-    commentedGame = models.ForeignKey(Game, on_delete=models.CASCADE)
+    commentedGame = models.ForeignKey(Game, on_delete=models.CASCADE,  related_name='comments')
     commenter = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
 
