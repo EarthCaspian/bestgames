@@ -18,9 +18,13 @@
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">Your Game Count: <span id="user-count-placeholder"></span></a>
-              </li>
+              {% if request.path == '/' %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Your Game Count: <span id="user-count-placeholder"></span></a>
+                  </li>
+              {% else %}
+              {% endif %}
+              
             {% else %}
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
