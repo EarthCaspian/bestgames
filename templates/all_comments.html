@@ -8,6 +8,7 @@
     {% if comments %}
         {% for comment in comments %}
             <p>
+                <img src="{{ comment.commentedGame.oyunResim.url }}" alt="Game Image" width="50">
                 <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
             </p>
         {% endfor %}
