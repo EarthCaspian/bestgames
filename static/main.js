@@ -71,3 +71,24 @@ function updateUserGameCount() {
         }
     });
 }
+
+//* Scrolling to search area function
+
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+  const url = form.getAttribute('action');
+  const method = form.getAttribute('method');
+  
+  // Serialize the form data into a URL-encoded string
+  const encodedFormData = new URLSearchParams(formData).toString();
+  
+  // Append the serialized form data as a query parameter to the current URL
+  const updatedURL = window.location.pathname + '?' + encodedFormData;
+
+  // Redirect to the updated URL with the fragment identifier to scroll to the results
+  window.location.href = updatedURL + '#search-results';
+});
+
+
