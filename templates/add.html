@@ -5,8 +5,9 @@
 <div class="container">
     <form action="" method="POST" enctype="multipart/form-data" class="w-75 mt-5 m-auto border rounded-2 p-5  bg-dark">
         {% csrf_token %}
-        {{form}}
-        {{form.media}}
+        <h2 class="text-center text-white">Add Game</h2>
+        {{form.as_p}}
+        {{ form.media }}
         <input type="submit" value="Add Game" class="btn btn-primary mt-3">
     </form>
 </div>
