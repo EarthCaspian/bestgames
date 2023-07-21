@@ -71,13 +71,3 @@ function updateUserGameCount() {
         }
     });
 }
-
-function scrollToSearch(elementId) {
-    const element = document.getElementById(elementId);
-    window.scrollTo(0, element.offsetTop);
-}
-
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    scrollToSearch('results');
-});
