@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+    <div class="container mt-3 d-flex align-items-center justify-content-center">
+    <div class="row border rounded-2 p-4 bg-dark">
     {% if comments %}
     <h1>Game Comments</h1>
 
@@ -10,6 +12,9 @@
             <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
         </p>
     {% endfor %}
-{% else %}
+    {% else %}
     <p>No comments yet.</p>
+    {% endif %}
+    </div>
+    </div>
 {% endblock %}
