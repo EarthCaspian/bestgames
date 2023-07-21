@@ -30,8 +30,10 @@ def index(request):
 
 def games(request, gameId):
     mygame = Game.objects.get(id = gameId)
+    comments = Comment.objects.filter(commentedGame=mygame)
     context = {
-        'gameItem':mygame
+        'gameItem':mygame,
+        'comments':comments
     }
     return render(request, 'detail.html', context)
 
