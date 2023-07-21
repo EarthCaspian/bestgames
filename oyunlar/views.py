@@ -81,6 +81,13 @@ def create_comment(request, gameId):
     }
     return render(request, 'create_comment.html',context)
 
+def all_comments(request):
+    comments = Comment.objects.all()
+    context = {
+        'comments':comments
+    }
+    return render(request, 'all_comments.html',context)
+
 @login_required
 def user_game_count(request):
     user = request.user
