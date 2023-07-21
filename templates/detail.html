@@ -20,12 +20,14 @@
     <div class="row border rounded-2 p-4 bg-dark">
     <h2>Comments</h2>
         {% if comments %}
-            {% for comment in comments %}
-                <p>
-                    <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
-                </p>
-                <a href="{% url 'create_comment' gameId=gameItem.id %}">Add a comment</a>
-            {% endfor %}
+            <ul class="list-unstyled">
+                {% for comment in comments %}
+                    <li>
+                        <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'create_comment' gameId=gameItem.id %}">Add a comment</a>
         {% else %}
             <p>No comments yet.</p>
             <a href="{% url 'create_comment' gameId=gameItem.id %}">Add a comment</a>
