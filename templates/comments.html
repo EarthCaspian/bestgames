@@ -5,10 +5,11 @@
     <div class="container mt-3 d-flex align-items-center justify-content-center">
     <div class="row border rounded-2 p-4 bg-dark">
     {% if comments %}
-    <h1>Game Comments</h1>
+    <h1 class="mb-5">Game Comments</h1>
 
     {% for comment in comments %}
-        <p>
+        <h4>{{comment.commentedGame}}</h4>
+        <p>    
             <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
         </p>
     {% endfor %}
