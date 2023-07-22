@@ -158,3 +158,77 @@ footer ul li a:hover {
 }
 
 /* ************Responsive***************** */
+
+/* For Desktops and above (Extra Large size and above) */
+@media (max-width: 1200px) {
+    .hero-text {
+      width: 50%; 
+      top: 50%; 
+    }
+    
+    .hero-text h2 {
+      font-size: 3vw; 
+    }
+  }
+  
+  /* For Laptops and above (Large size and above) */
+  @media (max-width: 992px) {
+    .hero-image {
+      height: 700px; 
+    }
+    
+    .hero-text {
+      width: 60%; 
+      top: 45%; 
+    }
+    
+    .hero-text h2 {
+      font-size: 2.5vw; 
+    }
+  }
+  
+  /* For Tablets and above (Medium size and above) */
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 600px; 
+    }
+    
+    .hero-text {
+      width: 70%; 
+      top: 60%; 
+    }
+    
+    .hero-text h2 {
+      font-size: 3vw; 
+    }
+  }
+  
+  /* For Mobile L size and above */
+  @media (max-width: 425px) {
+      .hero-image {
+        height: 500px; 
+      }
+      
+      .hero-text {
+        width: 80%; 
+        top: 60%; 
+        font-size: 3.5vw;
+      }
+      
+      .hero-text h2 {
+          font-size: 4.5vw; 
+        }
+    }
+
+  /* For Mobile S size and above */
+  @media (max-width: 320px) {
+    .hero-image {
+      height: 500px; /* Adjusted height for responsiveness */
+    }
+    
+    .hero-text {
+      width: 80%; 
+      top: 60%; 
+    
+    }
+}
