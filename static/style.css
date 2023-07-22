@@ -83,13 +83,7 @@ body{
 
 /* ************ Main ****************** */
 
-.intro {
-    color: white;
-    margin-top: 150px;
-    text-align: center;
-    font-family: 'Unbounded', cursive;
-    padding: 25px;
-}
+
 nav, h2 ,h4{
     font-family: 'Sigmar One', cursive;
 }
