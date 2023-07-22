@@ -109,8 +109,8 @@
     
     {% endblock content %}
     
-    <footer>
-            <ul class="left">
+    <footer class="d-flex justify-content-center">
+            <ul class="left list-unstyled">
                 <li><a href="/">Home</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="/">{{request.user}}</a></li>
@@ -122,7 +122,7 @@
                 <li></li>
             </ul>
 
-            <ul class="right">
+            <ul class="right list-unstyled">
                 <li><a href="#">Caspian's Curse</a></li>
             </ul>
         </footer>
