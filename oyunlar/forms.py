@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from .models import *
-from django.forms import widgets
+from django import forms
 
 class GameForm(ModelForm):
     class Meta:
@@ -19,5 +19,6 @@ class GameForm(ModelForm):
         super(GameForm, self).__init__(*args, **kwargs)
         for name, field in self.fields.items():
             field.widget.attrs.update({'class':'form-control'})
-        # Change the widget for the release date field to DateInput
-        self.fields['oyunCikisTarihi'].widget = widgets.DateInput(attrs={'type': 'date'})
+        # Set a widget for the ManyToManyField oyunPlatformu
+        self.fields['oyunPlatformu'].widget = forms.CheckboxSelectMultiple()
+        self.fields['oyunPlatformu'].queryset = Platform.objects.all()
