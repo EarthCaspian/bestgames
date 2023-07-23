@@ -38,9 +38,11 @@ def games(request, gameId):
     return render(request, 'detail.html', context)
 
 def addGames(request):
-    form = GameForm()
+    # pass the request object to the form when creating it
+    form = GameForm(request=request)
     if request.method == 'POST':
-        form = GameForm(request.POST, request.FILES)
+        # pass the request object to the form when validating it
+        form = GameForm(request.POST, request.FILES, request=request)
         if form.is_valid():
             form.save()
             return redirect('index')
