@@ -26,7 +26,7 @@ class Game(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     oyunTuru = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
     oyunPlatformu = models.ManyToManyField(Platform, blank=True)
-    oyunCikisTarihi = models.OneToOneField(ReleaseDate, on_delete=models.SET_NULL, null=True)
+    oyunCikisTarihi = models.ForeignKey(ReleaseDate,  on_delete=models.SET_NULL, null=True, blank=True)
     oyunIsim = models.CharField(max_length=100)
     oyunAciklama = RichTextField(max_length=10000)
     oyunResim = models.ImageField(upload_to='oyunlar/')
