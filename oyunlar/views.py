@@ -93,3 +93,11 @@ def user_game_count(request):
     user = request.user
     count = Game.objects.filter(user=user).count()
     return JsonResponse({'count':count})
+
+def user_games(request):
+    user = request.user
+    userGames = Game.objects.filter(user=user)
+    context = {
+        'userGames':userGames
+    }
+    return render(request, 'user_games.html', context)

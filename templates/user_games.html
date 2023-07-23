@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+          {% for oyun in userGames %}
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card me-4 mt-4 pt-2 text-bg-dark h-100 p-2 position-relative" style="width: 100%;">
+              <img src="{{oyun.oyunResim.url}}" class="card-img-top" style="object-fit: cover; height: 200px;" alt="{{oyun.OyunIsim}}">
+              <div class="card-body">
+                <h5 class="card-title">{{oyun.oyunIsim}}</h5>
+                <p class="card-text">{{oyun.oyunAciklama|safe}}</p>
+                <a href="{% url 'details' oyun.id %}" class="position-absolute btn btn-primary mx-auto" style="bottom: 10px;">Go to Game</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        
+      </div>
+    </div>
+{% endblock content %}
