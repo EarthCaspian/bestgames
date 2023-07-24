@@ -100,15 +100,21 @@ document.addEventListener('DOMContentLoaded', () => {
   upvoteButtons.forEach(button => {
     button.addEventListener('click', () => {
       const gameId = button.dataset.gameId;
-
+      console.log("upvote button works");
       // Send AJAX request to upvote view
-      fetch(`/upvote/${gameId}/`)
-        .then(response => response.json())
-        .then(data => {
-          // Update total upvote count on the page
-          const upvoteCountElement = document.querySelector(`#upvote-count-${gameId}`);
-          upvoteCountElement.textContent = `Total Upvotes: ${data.total_upvotes}`;
-        });
+      fetch(`/upvote/${gameId}/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken'),
+        },
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Update total upvote count on the page
+        const upvoteCountElement = document.querySelector(`#upvote-count-${gameId}`);
+        upvoteCountElement.textContent = `Total Upvotes: ${data.total_upvotes}`;
+      });
     });
   });
 });
