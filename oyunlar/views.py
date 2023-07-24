@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.db.models import Q
 from .forms import *
@@ -110,3 +110,12 @@ def user_games(request):
         'count': count
     }
     return render(request, 'user_games.html', context)
+
+def upvote_game(request, gameId):
+    game = get_object_or_404(Game, id=gameId)
+    upvote, created = Upvote.objects.get_or_create(user=request.user, game=game)
+    if created:
+        # New upvote added
+        game.upvote_count += 1
+        game.save()
+    return redirect('details', gameId = gameId)

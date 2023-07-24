@@ -8,5 +8,6 @@ urlpatterns = [
     path('comments/<int:gameId>/', game_comments, name='comments'),
     path('create_comment/<int:gameId>/', create_comment, name='create_comment'),
     path('all_comments', all_comments, name='all_comments'),
-    path('user_games/', user_games, name='user_games')
+    path('user_games/', user_games, name='user_games'),
+    path('upvote/<int:gameId>/', upvote_game, name='upvote_game')
 ]
