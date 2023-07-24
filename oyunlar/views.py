@@ -99,12 +99,14 @@ def user_game_count(request):
 def user_games(request):
     user = request.user
     userGames = Game.objects.filter(user=user)
+    count = Game.objects.filter(user=user).count()
 
     for oyun in userGames:
         if len(oyun.oyunAciklama) > 300:
             oyun.oyunAciklama = oyun.oyunAciklama[:300] + '...'
 
     context = {
-        'userGames':userGames
+        'userGames':userGames,
+        'count': count
     }
     return render(request, 'user_games.html', context)
