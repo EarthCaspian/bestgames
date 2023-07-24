@@ -30,6 +30,7 @@ class Game(models.Model):
     oyunIsim = models.CharField(max_length=100)
     oyunAciklama = RichTextField(max_length=10000)
     oyunResim = models.ImageField(upload_to='oyunlar/')
+    upvote_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.oyunIsim
