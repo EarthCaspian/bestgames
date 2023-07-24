@@ -53,5 +53,8 @@ class Upvote(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.game} upvoted by {self.user}"
+
     class Meta:
         unique_together = ('user', 'game')
