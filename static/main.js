@@ -92,3 +92,23 @@ document.querySelector('form').addEventListener('submit', function(event) {
 });
 
 
+//* Upvote function
+
+document.addEventListener('DOMContentLoaded', () => {
+  const upvoteButtons = document.querySelectorAll('.upvote-button');
+
+  upvoteButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const gameId = button.dataset.gameId;
+
+      // Send AJAX request to upvote view
+      fetch(`/upvote/${gameId}/`)
+        .then(response => response.json())
+        .then(data => {
+          // Update total upvote count on the page
+          const upvoteCountElement = document.querySelector(`#upvote-count-${gameId}`);
+          upvoteCountElement.textContent = `Total Upvotes: ${data.total_upvotes}`;
+        });
+    });
+  });
+});
