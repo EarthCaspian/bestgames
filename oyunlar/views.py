@@ -118,6 +118,4 @@ def upvote_game(request, gameId):
         # New upvote added
         game.upvote_count += 1
         game.save()
-        return JsonResponse({'message': 'Game upvoted successfully', 'upvote_count': game.upvote_count})
-    else:
-        return JsonResponse({'message': 'You have already upvoted this game', 'upvote_count': game.upvote_count})
+    return JsonResponse({'upvote_count': game.upvote_count})
