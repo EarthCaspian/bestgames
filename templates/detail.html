@@ -14,7 +14,7 @@
                 <p>{{gameItem.oyunAciklama|safe}}</p>
 
                 {% if user.is_authenticated %}
-                <button class="upvote-button btn btn-primary" data-game-id="{{ game.id }}">Upvote Game</button>
+                <button class="upvote-button btn btn-primary" data-game-id="{{ gameItem.id }}">Upvote Game</button>
                 {% endif %}
                 
                 <p class="mt-3">
