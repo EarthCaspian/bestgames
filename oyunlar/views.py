@@ -8,8 +8,10 @@ from django.contrib.auth.decorators import login_required
 def index(request, sort_option=None):
     if sort_option == 'alphabetical':
         oyunlar = Game.objects.order_by('oyunIsim')
-    elif sort_option == 'release_date':
-        oyunlar = Game.objects.order_by('-oyunCikisTarihi', '-oyunIsim')
+    elif sort_option == 'newest':
+        oyunlar = Game.objects.order_by('-oyunCikisTarihi__cikisTarihi')
+    elif sort_option == 'oldest':
+        oyunlar = Game.objects.order_by('oyunCikisTarihi__cikisTarihi')
     else:
         oyunlar = Game.objects.all()
     search = ''
