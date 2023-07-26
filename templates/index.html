@@ -66,6 +66,7 @@
 
     <a id="search-results"></a>
     <h4 class="text-light text-center mt-5">List of Games Considered Best Throughout History</h4>
+    <!-- *Sort button -->
     <div class="dropdown d-flex justify-content-center mt-3">
       <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Sort by
@@ -76,6 +77,7 @@
         <li><a class="dropdown-item" href="{% url 'sort_index' 'oldest' %}">Oldest</a></li>
       </ul>
     </div>
+    <!-- *Main Games Section -->
     <div class="container mt-0" id="results">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
         {% if oyunlar|length > 0 %}
@@ -96,7 +98,7 @@
         {% endif %}
       </div>
     </div>
-
+    <!-- *Fun Facts Section -->
     <div class="fun-fact container-fluid mt-5">
       <div class="row p-4 bg-dark">
 
