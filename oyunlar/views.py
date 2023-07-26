@@ -5,8 +5,13 @@ from .forms import *
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-def index(request):
-    oyunlar = Game.objects.all()
+def index(request, sort_option=None):
+    if sort_option == 'alphabetical':
+        oyunlar = Game.objects.order_by('oyunIsim')
+    elif sort_option == 'release_date':
+        oyunlar = Game.objects.order_by('-oyunCikisTarihi', '-oyunIsim')
+    else:
+        oyunlar = Game.objects.all()
     search = ''
     if request.GET.get('search'):
         search = request.GET.get('search')
@@ -24,7 +29,8 @@ def index(request):
     context = {
         'oyunlar':oyunlar,
         'search':search,
-        'game_count':game_count
+        'game_count':game_count,
+        'sort_option':sort_option
     }
     return render(request, 'index.html', context)
 
