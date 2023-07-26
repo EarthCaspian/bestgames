@@ -92,7 +92,7 @@ nav {
     display: flex;
     justify-content: space-around;
     border-radius: 25px;
-    margin: 25px 25px;
+    margin: 0px 25px;
 }
 
 .container {
