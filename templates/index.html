@@ -87,6 +87,7 @@
               <img src="{{oyun.oyunResim.url}}" class="card-img-top" style="object-fit: cover; height: 200px;" alt="{{oyun.OyunIsim}}">
               <div class="card-body">
                 <h5 class="card-title">{{oyun.oyunIsim}}</h5>
+                <small>{{oyun.oyunCikisTarihi}}</small>
                 <p class="card-text">{{oyun.oyunAciklama|safe}}</p>
                 <a href="{% url 'details' oyun.id %}" class="position-absolute btn btn-primary mx-auto" style="bottom: 10px;">Go to Game</a>
               </div>
