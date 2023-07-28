@@ -77,6 +77,7 @@ def game_comments(request, gameId):
     return render(request, 'comments.html', context)
 
 def create_comment(request, gameId):
+    game = None # Set a default value for the 'game' variable
     if request.method == 'POST':
         content = request.POST['content']
         commenter = request.user
@@ -86,8 +87,15 @@ def create_comment(request, gameId):
         comment.save()
 
         return redirect('details', gameId=gameId)
+    else:
+        try:
+            game = Game.objects.get(id=gameId)
+        except Game.DoesNotExist:
+            # Handle the case when the game with the given ID does not exist
+            pass
     context = {
         'gameId': gameId,
+        'game':game
     }
     return render(request, 'create_comment.html',context)
 
