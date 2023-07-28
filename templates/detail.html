@@ -37,10 +37,14 @@
                     </li>
                 {% endfor %}
             </ul>
-            <a href="{% url 'create_comment' gameId=gameItem.id %}">Add a comment</a>
+            <a href="{% url 'create_comment' gameId=gameItem.id %}">
+            <button class="btn btn-sm btn-secondary">Add a comment</button>
+            </a>
         {% else %}
             <p>No comments yet.</p>
-            <a href="{% url 'create_comment' gameId=gameItem.id %}">Add a comment</a>
+            <a href="{% url 'create_comment' gameId=gameItem.id %}">
+            <button class="btn btn-sm btn-secondary">Add a comment</button>
+            </a>
         {% endif %}
     </div>
     </div>
