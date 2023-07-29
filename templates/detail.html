@@ -11,6 +11,7 @@
 
             <div class="col-8">
                 <h3>{{gameItem.oyunIsim}}</h3>
+                <small>added by <span style="font-weight:bold;">{{gameItem.user}}</span></small>
                 <p>{{gameItem.oyunAciklama|safe}}</p>
 
                 {% if user.is_authenticated %}
