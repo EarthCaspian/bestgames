@@ -19,12 +19,15 @@
                 </ul>
               </li>
                   
-              {% if request.path == '/' %}
-                  <li class="nav-item">
+              {% comment %} {% if request.path == '/' %} {% endcomment %}
+                  {% comment %} <li class="nav-item">
                     <a class="nav-link" href="/">Your Game Count: <span id="user-count-placeholder"></span></a>
+                  </li> {% endcomment %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Your Game Count: {{ user_game_count }}</a>
                   </li>
-              {% else %}
-              {% endif %}
+              {% comment %} {% else %}
+              {% endif %} {% endcomment %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'all_comments' %}">All Comments</a>
                   </li>

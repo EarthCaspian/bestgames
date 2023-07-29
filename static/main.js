@@ -1,6 +1,6 @@
 $(document).ready(function() {
     updateGameCount();
-    updateUserGameCount();
+    // updateUserGameCount();
     console.log('update running');
 
     // slick init
@@ -42,7 +42,7 @@ $(document).ready(function() {
 });
 
 var url = "game/count";
-var url2 = "game/count/user"
+// var url2 = "game/count/user"
 
 function updateGameCount() {
     $.ajax({
@@ -58,19 +58,19 @@ function updateGameCount() {
     });
 }
 
-function updateUserGameCount() {
-    $.ajax({
-        url: url2,
-        method: 'GET',
-        dataType: "json",
-        success: function(response) {
-            $('#user-count-placeholder').text(response.count);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching user game count:', error);
-        }
-    });
-}
+// function updateUserGameCount() {
+//     $.ajax({
+//         url: url2,
+//         method: 'GET',
+//         dataType: "json",
+//         success: function(response) {
+//             $('#user-count-placeholder').text(response.count);
+//         },
+//         error: function(xhr, status, error) {
+//             console.error('Error fetching user game count:', error);
+//         }
+//     });
+// }
 
 //* Scrolling to search area function
 
