@@ -28,6 +28,12 @@
                   </li>
               {% comment %} {% else %}
               {% endif %} {% endcomment %}
+                  {% if request.path != '/' %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Total Game Count: {{game_count}}</a>
+                  </li>
+                  {% else %}
+                  {% endif %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'all_comments' %}">All Comments</a>
                   </li>
