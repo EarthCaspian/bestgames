@@ -12,7 +12,11 @@
             <div class="col-8">
                 <h3>{{gameItem.oyunIsim}}</h3> 
                 <hr>
-                <small style="font-weight:bold;">{{gameItem.oyunTuru}}</small> <br>
+                <small style="font-weight:bold;">{{gameItem.oyunTuru}}</small> - 
+                <small>{% for platform in gameItem.oyunPlatformu.all %}
+                    {{ platform.platform }}
+                    {% if not forloop.last %}, {% endif %}
+                {% endfor %}</small> <br>
                 <small>added by <span style="font-weight:bold;">{{gameItem.user}}</span></small> <small> - released on {{gameItem.oyunCikisTarihi}}</small>
                 <p>{{gameItem.oyunAciklama|safe}}</p>
 
