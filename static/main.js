@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    updateGameCount();
+    // updateGameCount();
     // updateUserGameCount();
     console.log('update running');
 
@@ -41,22 +41,24 @@ $(document).ready(function() {
     );
 });
 
-var url = "game/count";
+//* Old game count functions
+
+// var url = "game/count";
 // var url2 = "game/count/user"
 
-function updateGameCount() {
-    $.ajax({
-        url: url,
-        method: 'GET',
-        dataType: "json",
-        success: function(response) {
-            $('#count-placeholder').text(response.count);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching game count:', error);
-        }
-    });
-}
+// function updateGameCount() {
+//     $.ajax({
+//         url: url,
+//         method: 'GET',
+//         dataType: "json",
+//         success: function(response) {
+//             $('#count-placeholder').text(response.count);
+//         },
+//         error: function(xhr, status, error) {
+//             console.error('Error fetching game count:', error);
+//         }
+//     });
+// }
 
 // function updateUserGameCount() {
 //     $.ajax({

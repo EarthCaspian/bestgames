@@ -8,3 +8,7 @@ def user_game_count(request):
     else:
         count = 0
     return {'user_game_count': count}
+
+def game_count(request):
+    count = Game.objects.count()
+    return {'game_count': count}
