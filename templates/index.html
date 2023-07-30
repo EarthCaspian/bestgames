@@ -48,6 +48,7 @@
     
     
     {% block content %}
+    {% if request.path|slice:":6" != "/sort/" %}
     <div class="hero-image">
       <div class="hero-text">
         <h2>Welcome to Caspian's Curse</h2>
@@ -66,9 +67,10 @@
         </span>
     </div>
     </div>
+    {% endif %}
 
     <a id="search-results"></a>
-    <h4 class="text-light text-center mt-5">List of Games Considered Best Throughout History</h4>
+    <h4 class="text-light text-center mt-5 pt-3">List of Games Considered Best Throughout History</h4>
     <!-- *Sort button -->
     <div class="dropdown d-flex justify-content-center mt-3">
       <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
