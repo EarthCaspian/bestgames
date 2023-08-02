@@ -1,2 +1,5 @@
 # CKEditor
 static/ckeditor/
+# Ignore the pycache files
+__pycache__
+*.pyc
