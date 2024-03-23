@@ -1,6 +1,6 @@
 # caspiansCurse
 
-This is the django-framework backend integration version of the first front end web page i've created.
+This project is a reimagining of my initial venture into web development, marking a significant milestone in my learning journey. Its primary purpose was to hone my skills in utilizing the Django framework.
 
 It's meant as a graduation project from the software academy i enrolled into in late 2022. It was originally a front end only project that can be seen here: https://github.com/EarthCaspian/caspians2022list
 
